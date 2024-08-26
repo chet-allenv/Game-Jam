@@ -1,0 +1,15 @@
+c:\Users\cheta\C# Projects\Game Jam\GameJam\bin\Debug\net8.0\GameJam.exe
+c:\Users\cheta\C# Projects\Game Jam\GameJam\bin\Debug\net8.0\GameJam.deps.json
+c:\Users\cheta\C# Projects\Game Jam\GameJam\bin\Debug\net8.0\GameJam.runtimeconfig.json
+c:\Users\cheta\C# Projects\Game Jam\GameJam\bin\Debug\net8.0\GameJam.dll
+c:\Users\cheta\C# Projects\Game Jam\GameJam\bin\Debug\net8.0\GameJam.pdb
+c:\Users\cheta\C# Projects\Game Jam\GameJam\obj\Debug\net8.0\GameJam.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\cheta\C# Projects\Game Jam\GameJam\obj\Debug\net8.0\GameJam.AssemblyInfoInputs.cache
+c:\Users\cheta\C# Projects\Game Jam\GameJam\obj\Debug\net8.0\GameJam.AssemblyInfo.cs
+c:\Users\cheta\C# Projects\Game Jam\GameJam\obj\Debug\net8.0\GameJam.csproj.CoreCompileInputs.cache
+c:\Users\cheta\C# Projects\Game Jam\GameJam\obj\Debug\net8.0\GameJam.sourcelink.json
+c:\Users\cheta\C# Projects\Game Jam\GameJam\obj\Debug\net8.0\GameJam.dll
+c:\Users\cheta\C# Projects\Game Jam\GameJam\obj\Debug\net8.0\refint\GameJam.dll
+c:\Users\cheta\C# Projects\Game Jam\GameJam\obj\Debug\net8.0\GameJam.pdb
+c:\Users\cheta\C# Projects\Game Jam\GameJam\obj\Debug\net8.0\GameJam.genruntimeconfig.cache
+c:\Users\cheta\C# Projects\Game Jam\GameJam\obj\Debug\net8.0\ref\GameJam.dll
