@@ -4,10 +4,13 @@ namespace GameJam
     public class Game
     {   
         // This creates a Deck object that will be used through out the game.
-        Deck CurrentDeck {get; set;}
+        public Deck CurrentDeck {get; set;}
 
         // Creates a Stack object that will operate as a discard pile.
-        Stack<Card> DiscardPile {get; set;}
+        public Stack<Card> DiscardPile {get; set;}
+
+        // Creates the place where the Flop, or three drawn cards will be stored.
+        public Card[] Flop = new Card[3];
 
         /// <summary>
         /// Constructor
@@ -19,16 +22,26 @@ namespace GameJam
         }
 
         /// <summary>
-        /// Draws a card from the current deck, adds it to the discard, and then returns the drawn Card.
+        /// Draws a card from the current deck, and puts it into the flop does so 3 times.
         /// </summary>
-        /// <returns></returns>
-        public Card DrawCard()
+        public void DrawCards()
         {
-            var tempCard = CurrentDeck.DrawCard();
+            for (int i = 0; i < 3; i++)
+            {
+                var tempCard = CurrentDeck.DrawCard();
+                Flop[i] = tempCard;
+            }
+        }
 
-            DiscardPile.Push(tempCard);
-
-            return tempCard;
+        /// <summary>
+        /// Method for discarding the flop. Takes every card in the flop Array and pushes it into the DiscardPile stack.
+        /// </summary>
+        public void DiscardCards()
+        {
+            foreach (var c in Flop)
+            {
+                DiscardPile.Push(c);
+            }
         }
 
         /// <summary>
