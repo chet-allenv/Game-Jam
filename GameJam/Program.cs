@@ -4,9 +4,9 @@
     {
         public static void Main(string[] args)
         {
-            TestCard tc = new();
+            Ceo ceo = new();
 
-            tc.DisplayCard();
+            Console.WriteLine(ceo.Name);
         }
     }
 }

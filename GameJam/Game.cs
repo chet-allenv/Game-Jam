@@ -12,6 +12,12 @@ namespace GameJam
         // Creates the place where the Flop, or three drawn cards will be stored.
         public Card[] Flop = new Card[3];
 
+        // Creates the inventory rof items
+        public Item[] Inventory = new Item[4]; 
+
+        // Ceo object of the current CEO
+        public Ceo CurrentCeo;
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -19,6 +25,8 @@ namespace GameJam
         {
             CurrentDeck = new();
             DiscardPile = [];
+
+            CurrentCeo = new();
         }
 
         /// <summary>
@@ -51,6 +59,23 @@ namespace GameJam
         {
             CurrentDeck = new();
             DiscardPile = [];
+        }
+
+        /// <summary>
+        /// Checks if the Current CEO has lost
+        /// </summary>
+        /// <returns> True if CEO HAS lost, FALSE if not </returns>
+        public bool HasCeoLost()
+        {
+            return CurrentCeo.CheckIfLost();
+        }
+
+        /// <summary>
+        /// Generates a new Current CEO
+        /// </summary>
+        public void GenNewCEO()
+        {
+            CurrentCeo = new();
         }
     }
 }

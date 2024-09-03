@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GameJam
-build_property.ProjectDir = C:\Users\cheta\C# Projects\Game Jam\GameJam\
+build_property.ProjectDir = c:\Users\cheta\C# Projects\Game Jam\GameJam\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

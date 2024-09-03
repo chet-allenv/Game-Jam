@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cheta\\C# Projects\\Game Jam\\GameJam\\GameJam.csproj": {}
+    "c:\\Users\\cheta\\C# Projects\\Game Jam\\GameJam\\GameJam.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cheta\\C# Projects\\Game Jam\\GameJam\\GameJam.csproj": {
+    "c:\\Users\\cheta\\C# Projects\\Game Jam\\GameJam\\GameJam.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cheta\\C# Projects\\Game Jam\\GameJam\\GameJam.csproj",
+        "projectUniqueName": "c:\\Users\\cheta\\C# Projects\\Game Jam\\GameJam\\GameJam.csproj",
         "projectName": "GameJam",
-        "projectPath": "C:\\Users\\cheta\\C# Projects\\Game Jam\\GameJam\\GameJam.csproj",
+        "projectPath": "c:\\Users\\cheta\\C# Projects\\Game Jam\\GameJam\\GameJam.csproj",
         "packagesPath": "C:\\Users\\cheta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cheta\\C# Projects\\Game Jam\\GameJam\\obj\\",
+        "outputPath": "c:\\Users\\cheta\\C# Projects\\Game Jam\\GameJam\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cheta\\AppData\\Roaming\\NuGet\\NuGet.Config",

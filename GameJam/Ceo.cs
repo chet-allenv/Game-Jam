@@ -8,6 +8,8 @@ namespace GameJam
         // Name of the CEO
         public string Name {get; set;}
 
+        private readonly Random rng = new();
+
         // number rating how moral the CEO is, determines probability of getting evil cards, from 0 - 100
         public int Morality {get; set;}  // THIS STAT IS NOT VISIBLE TO THE PLAYER
 
@@ -24,12 +26,31 @@ namespace GameJam
         /// </summary>
         /// <param name="name"> Name of CEO </param>
         /// <param name="morality"> Rating of the morality of the CEO </param>
-        public Ceo(string name, int morality)
+        public Ceo(string name)
         {
             Name = name;
-            Morality = morality;
+            Morality = 50;
 
             InitializeStats();
+        }
+
+        /// <summary>
+        ///  Constructor that uses the Random name generator meothd to give the CEO a random name
+        /// </summary>
+        public Ceo()
+        {
+            Name = GenerateRandName();
+            Morality = 50;
+
+            InitializeStats();
+        }
+
+        private string GenerateRandName()
+        {
+            List<string> Names = [.. File.ReadAllLines("Names.txt")]; 
+            int RandIndexNum = rng.Next(0, Names.Count);
+
+            return Names[RandIndexNum];
         }
 
         /// <summary>
@@ -42,6 +63,16 @@ namespace GameJam
             Stat_PublicOpinion = 50;
             Stat_Capital = 50;
             Stat_FDA = 50;
+        }
+
+        /// <summary>
+        /// Checks that all stats are above 0.
+        ///  Returns boolean statement of that check
+        /// </summary>
+        /// <returns> Returns True if CEO has lost, False if they have not. </returns>
+        public bool CheckIfLost()
+        {
+            return Stat_Capital > 0 && Stat_FDA > 0 && Stat_PublicOpinion > 0 && Stat_WorkerOpinion > 0;
         }
     }
 }
