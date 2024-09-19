@@ -24,15 +24,7 @@ if start {
 }
 
 // Handles selecting a card
-if _select {
-	if cards[index] < 1 {
-		types[1, 0] += 100	// Money
-	} else if cards[index] < 2 {
-		types[1, 1] += 100	// Popularity
-	} else if cards[index] < 3 {
-		types[1, 2] += 100	// Skills
-	} else {
-	types[1, 3] += 100		// Luck
-	}
-	start = true	// Runs the command to randomize cards again
+if _select 
+{
+	select_card();
 }

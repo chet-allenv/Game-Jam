@@ -28,3 +28,19 @@ index = 0
 
 // Controls when to swap cards
 start = true
+
+// This method is to be run when the card is selected.
+function select_card()
+{
+	// This is to be overridden...
+	if cards[index] < 1 {
+		types[1, 0] += 100	// Money
+	} else if cards[index] < 2 {
+		types[1, 1] += 100	// Popularity
+	} else if cards[index] < 3 {
+		types[1, 2] += 100	// Skills
+	} else {
+	types[1, 3] += 100		// Luck
+	}
+	start = true	// Runs the command to randomize cards again
+}
