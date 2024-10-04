@@ -31,4 +31,7 @@ if global.loss == "Cash" {
 	_text = "The public has turned against you!\nMaybe the next CEO will be more popular..."
 }
 
-draw_text(room_width / 2, room_height * 0.2, _text)
+draw_text(room_width / 2, room_height * 0.25, _text)
+
+draw_set_font(fnt_text)
+draw_text(room_width / 4.75, room_height * 0.75, "$" + string(global.max_cash))

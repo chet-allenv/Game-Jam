@@ -6,3 +6,7 @@ global.public = 50; // public stat
 if (!variable_global_exists("loss")) {
     global.loss = "Cash";
 }
+
+if (!variable_global_exists("max_cash")) {
+    global.max_cash = 0;
+}

@@ -32,6 +32,9 @@ if _select
 	select_card();
 }
 
+if global.money > global.max_cash {
+	global.max_cash = global.money
+}
 
 // Losing, the global variable carries the lose condition to the next room (game_over)
 if global.money < 0 { // Out of cash
