@@ -44,6 +44,7 @@
     {"id":{"name":"o_button","path":"objects/o_button/o_button.yy",},},
     {"id":{"name":"o_card","path":"objects/o_card/o_card.yy",},},
     {"id":{"name":"o_employee_stat_label","path":"objects/o_employee_stat_label/o_employee_stat_label.yy",},},
+    {"id":{"name":"o_end","path":"objects/o_end/o_end.yy",},},
     {"id":{"name":"o_example_child_card","path":"objects/o_example_child_card/o_example_child_card.yy",},},
     {"id":{"name":"o_exit_button","path":"objects/o_exit_button/o_exit_button.yy",},},
     {"id":{"name":"o_game_over","path":"objects/o_game_over/o_game_over.yy",},},
@@ -58,6 +59,7 @@
     {"id":{"name":"o_start_button","path":"objects/o_start_button/o_start_button.yy",},},
     {"id":{"name":"o_tutorial","path":"objects/o_tutorial/o_tutorial.yy",},},
     {"id":{"name":"o_win","path":"objects/o_win/o_win.yy",},},
+    {"id":{"name":"r_end","path":"rooms/r_end/r_end.yy",},},
     {"id":{"name":"r_game_over","path":"rooms/r_game_over/r_game_over.yy",},},
     {"id":{"name":"r_game","path":"rooms/r_game/r_game.yy",},},
     {"id":{"name":"r_menu","path":"rooms/r_menu/r_menu.yy",},},
@@ -117,6 +119,7 @@
     {"roomId":{"name":"r_game_over","path":"rooms/r_game_over/r_game_over.yy",},},
     {"roomId":{"name":"r_test_game","path":"rooms/r_test_game/r_test_game.yy",},},
     {"roomId":{"name":"r_win","path":"rooms/r_win/r_win.yy",},},
+    {"roomId":{"name":"r_end","path":"rooms/r_end/r_end.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

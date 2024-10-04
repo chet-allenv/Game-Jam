@@ -7,5 +7,5 @@ event_inherited();
 function _on_pressed()
 {
 	//room_goto_next();
-	room_goto(3);
+	room_goto(6);
 }

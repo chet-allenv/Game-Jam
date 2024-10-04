@@ -7,7 +7,7 @@
   "managed":true,
   "name":"o_start_button",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"o_button","path":"objects/o_button/o_button.yy",},"propertyId":{"name":"button_text","path":"objects/o_button/o_button.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"START\"",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"o_button","path":"objects/o_button/o_button.yy",},"propertyId":{"name":"button_text","path":"objects/o_button/o_button.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"     START\"",},
   ],
   "parent":{
     "name":"Objects",
