@@ -6,6 +6,7 @@ if (char_index < string_length(texts[index])) {
 		timer = 0
 	}
 }
+
 displayed_text = string_copy(texts[index], 0, char_index)
 
 for (var i = 0; i < 18; i++) {

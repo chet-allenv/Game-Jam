@@ -14,47 +14,53 @@ draw_set_halign(fa_center)
 
 // Loops over the cards array to draw each card
 
-
 for (var i = 0; i < 4; i++) {
 	
-	/*
-	if index == i {
-		draw_sprite_ext(current_cards[i]._sprite, 0, (room_width * 0.125 + (i * _space)) - sprite_get_width(current_cards[i]._sprite) / 16, room_height / 3, .25, .25, 0, c_white, 1)
+	if cards_chosen % 5 == 0 and cards_chosen != 0 {
+		draw_sprite_ext(current_event[0]._sprite, 0, (room_width / 2) - sprite_get_width(current_event[0]._sprite) / 8, room_height / 3.25, 0.25, 0.25, 0, c_white, 1)	
+		draw_text(room_width / 2 + 25, room_height * 0.15, current_event[0]._description)
 	} else {
-		// Draws the other cards
-		draw_sprite_ext(current_cards[i]._sprite, 0, room_width * 0.125 + (i * _space), room_height / 3, .125, .125, 0, c_white, 1);
-	} 
-	*/
-	
-	if is_mouse_over_card(i)
-	{
-		draw_sprite_ext(current_cards[i]._sprite, 0, (room_width * 0.125 + (i * _space)) - sprite_get_width(current_cards[i]._sprite) / 16, room_height / 3, .25, .25, 0, c_white, 1);
-	}
-	else
-	{
-		draw_sprite_ext(current_cards[i]._sprite, 0, room_width * 0.125 + (i * _space), room_height / 3, .125, .125, 0, c_white, 1);
+		if is_mouse_over_card(i)
+		{ 
+			draw_sprite_ext(current_cards[i]._sprite, 0, (room_width * 0.125 + (i * _space)) - sprite_get_width(current_cards[i]._sprite) / 16, room_height / 3, .25, .25, 0, c_white, 1);
+		}
+		else
+		{
+			draw_sprite_ext(current_cards[i]._sprite, 0, room_width * 0.125 + (i * _space), room_height / 3, .125, .125, 0, c_white, 1);
+		}
 	}
 }
 
 function draw_card_regular(_index)
 {
+	if cards_chosen % 5 == 0 and cards_chosen != 0 {
+		draw_sprite_ext(current_event[0]._sprite, 0, (room_width / 2) - sprite_get_width(current_event[0]._sprite) / 8, room_height / 3.25, 0.25, 0.25, 0, c_white, 1)	
+	} else {
 	draw_sprite_ext(current_cards[_index]._sprite, 0, room_width * 0.125 + (_index * _space), room_height / 3, .125, .125, 0, c_white, 1);
+	}
 }
 
 function draw_cards_regular(pos0, pos1, pos2, pos3)
 {
+	if cards_chosen % 5 == 0 and cards_chosen != 0 {
+		draw_sprite_ext(current_event[0]._sprite, 0, (room_width / 2) - sprite_get_width(current_event[0]._sprite) / 8, room_height / 3.25, 0.25, 0.25, 0, c_white, 1)	
+	}	else {
 	if pos0 { draw_card_regular(0) };
 	if pos1 { draw_card_regular(1) };
 	if pos2 { draw_card_regular(2) };
 	if pos3 { draw_card_regular(3) };
+	}
 }
 
 function draw_big_card(_index)
 {
-	draw_sprite_ext(current_cards[_index]._sprite, 0, (room_width * 0.125 + (_index * _space)) - sprite_get_width(current_cards[_index]._sprite) / 16, room_height / 3, .25, .25, 0, c_white, 1);
+	if cards_chosen % 5 == 0 and cards_chosen != 0 {
+		draw_sprite_ext(current_event[0]._sprite, 0, (room_width / 2) - sprite_get_width(current_event[0]._sprite) / 8, room_height / 3.25, 0.25, 0.25, 0, c_white, 1)	
+	} else {
+		draw_sprite_ext(current_cards[_index]._sprite, 0, (room_width * 0.125 + (_index * _space)) - sprite_get_width(current_cards[_index]._sprite) / 16, room_height / 3, .25, .25, 0, c_white, 1);
 
-    draw_text(room_width / 2 + 20, 120, current_cards[_index]._description); // Display the hover message
-
+	    draw_text(room_width / 2 + 20, 120, current_cards[_index]._description); // Display the hover message
+	}
 }
 
 switch _index_of_hover_card

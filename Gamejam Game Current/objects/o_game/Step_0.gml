@@ -20,7 +20,10 @@ if (mouse_check_button_released(mb_left))
 
 	if (hovering) 
 	{
+		if cards_chosen % 5 == 0 and cards_chosen != 0{
+		} else {
 		_select = true;
+		}
 	}
 	
 } 
@@ -49,4 +52,37 @@ if global.money < 0 { // Out of cash
 } else if global.public < 0 {
 	global.loss = "Public"
 	room_goto_next()
+}
+	
+// Winning
+if global.money >= 10000 and global.employee >= 5000 and global.investor >= 5000 and global.public >= 6000 {
+	room_goto(5)
+}
+	
+	
+if global.choice != noone and o_no.visible{
+	if global.choice == true {
+		if current_event[0]._modifier == 0 {
+			multipliers[0]++
+		} else if current_event[0]._modifier == 1 {
+			multipliers[1]++
+		} else if current_event[0]._modifier == 2 {
+			multipliers[2]++
+		} else if current_event[0]._modifier == 3 {
+			multipliers[3]++
+		}
+		global.money += current_event[0]._money_change * multipliers[0]
+		global.employee += current_event[0]._employee_change * multipliers[1]
+		global.investor += current_event[0]._investor_change * multipliers[2]
+		global.public += current_event[0]._public_change * multipliers[3]
+	} else {
+		global.money -= current_event[0]._money_change * multipliers[0]
+		global.employee -= current_event[0]._employee_change * multipliers[1]
+		global.investor -= current_event[0]._investor_change * multipliers[2]
+		global.public -= current_event[0]._public_change * multipliers[3]
+	}
+	global.choice = noone
+	o_no.visible = false
+	o_yes.visible = false
+	cards_chosen++
 }

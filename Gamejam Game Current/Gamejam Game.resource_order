@@ -1,4 +1,8 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"o_no","order":2,"path":"objects/o_no/o_no.yy",},
+    {"name":"o_yes","order":1,"path":"objects/o_yes/o_yes.yy",},
+    {"name":"Sprite42","order":1,"path":"sprites/Sprite42/Sprite42.yy",},
+  ],
 }

@@ -7,17 +7,23 @@ index = 0
 // Number of cards picked so far (rounds)
 cards_chosen = 0
 
-// Picks the next event round
-event_round = 5
-
 // Cards
 current_cards = [0, 0, 0, 0]
+
+// Event
+current_event = [0]
 
 hovering = false;
 clicked = false;
 _index_of_hover_card = -1;
 
 _space = 300
+
+o_no.visible = false
+o_yes.visible = false
+
+// Variables affecting stat calculations:
+multipliers = [1, 1, 1, 1]
 
 // Instantiation of cards (and putting them in an array)
 for (var i = 0; i < 20; i++) {
@@ -57,93 +63,29 @@ for (var i = 0; i < 5; i++)
     switch i
     {
         case 0:
-            _event_card.set_values("Data Ransom", value_change(-10, 0, 0, 0), value_change(0, -5, 0, -5), e_data_ransom, "Your data has been stlolen loL!" ); break;
+            _event_card.set_values("Data Ransom", 3, -10, 5, 5, 5, e_data_ransom, "Your data has been stolen!\nPay it back?\nYou lose cash, but gain every other stat!\nThe public really appreciates this." ); break;
         case 1:
-            _event_card.set_values("Drug Smuggling", value_change(10, 0, 10, 0), value_change(0, 0, 0, 0), e_drug_smuggle, "Smuggle drugies yayaya" ); break;
+            _event_card.set_values("Drug Smuggling", 0, 10, 5, 5, 0, e_drug_smuggle, "An independent drug smuggler approaches you...\nDo you wish to sell their product?\nYou gain stats and lose none!\nYour wallet really appreciates this." ); break;
         case 2:
-            _event_card.set_values("Child Labor", value_change(10, -10, 5, -10), value_change(0, 0, -5, 5), e_child_labor, "emplyoyee kids!?" ); break;
+            _event_card.set_values("Child Labor", 0, 25, -10, 5, -15, e_child_labor, "A shady underground businessman approaches...\nHe says he has some staff that\ncould work for you for free...\nEmployees and the public will hate you,\nbut your wallet really loves this!" ); break;
         case 3:
-            _event_card.set_values("Product Recall", value_change(-5, 0, -5, 0), value_change(0, 0, 0, -10), e_product_recall, "product recall" ); break;
+            _event_card.set_values("Product Recall", 2, -10, 0, 10, 10, e_product_recall, "Your products are reportedly causing severe\ninfections.Recall your products?\nYou will lose cash but investors and \nthe public like this!\nInvestors really appreciates this." ); break;
         case 4:
-            _event_card.set_values("Union", value_change(-5, 10, -5, 0), value_change(5, -10, 0, -5), e_unionize, "UNIIIIOOOOON!!!!" ); break;
+            _event_card.set_values("Union", 1, -10, 10, -5, 10, e_unionize, "Your workers are joining more unions.\nDo you condone this?\nYou will lose cash and points with investors.\nEmployees really love this!" ); break;
     }
 }
-
-for (var i = 0; i < 20; i++) {
-    if (all_cards[i] != noone) {
-        // Print the default values (you might want to adjust this based on your initial values)
-        show_debug_message("Card " + string(i) + " - ID: " + string(all_cards[i]) + ", Name: " + all_cards[i]._name);
-    } else {
-        show_debug_message("Card " + string(i) + " is no longer valid.");
-    }
-}
-
-// Variables affecting stat calculations:
-m_raise = 1 // Multiplier affecting how much employees are paid
-m_cash = 1	// Multiplier affecting how much money is gained
-m_popularity = 1 // Multiplier affecting how much popularity is gained
-m_skills = 1 // Multiplier affecting how much skills is gained
 
 // This method is to be run when the card is selected.
 function select_card()
 {
 	for (var i = 0; i < 4; i++) {
 		if index == i {
-			global.money += current_cards[i]._money_change
-			global.employee += current_cards[i]._employee_change
-			global.investor += current_cards[i]._investor_change
-			global.public += current_cards[i]._public_change
+			global.money += current_cards[i]._money_change * max(multipliers[0], 1)
+			global.employee += current_cards[i]._employee_change * max(multipliers[1], 1)
+			global.investor += current_cards[i]._investor_change * max(multipliers[2], 1)
+			global.public += current_cards[i]._public_change * max(multipliers[3], 1)
 		}
 	}
-	cards_chosen++
-	shuffle()
-}
-
-// This method is to be run when an event card is selected.
-function select_event()
-{	if bad_event {
-		if event_cards[index] < 1 {
-			bad_events[1, 0]++	// Increments charity event counter
-			m_popularity += 0.5	// Increases popularity gain
-			types[1, 0] /= 2	// - 1/2 Money
-		}	else if event_cards[index] < 2 {	// Copyright
-			bad_events[1, 1]++	// Increments copyright event counter
-			m_popularity += 0.2	// Increases popularity gain
-			m_skills += 0.2		// Increases skills gain
-			types[1, 0] = floor(types[1, 0] * 0.6)	// - Money
-			types[1, 1] = floor(types[1, 1] * 0.6)	// + Popularity
-			types[1, 2] = floor(types[1, 2] * 0.6)	// + Skills
-		}
-		bad_event = false
-} else {
-	if event_cards[index] < 1 {	// Raise
-		events[1, 0] ++	// Increments raise event counter
-		m_raise += 0.2		// Increases raise
-		m_popularity += 0.2	// Increases popularity gain
-		types[1, 1] += 500	// + Popularity
-		types[1, 2] += 100	// + Skills
-	}  else if event_cards[index] < 2 {	// Stocked
-			events[1, 1]++	// Increments the stocked event counter
-			types[1, 0] += 1000	// + Money
-			types[1, 2] -= 50	// - Skills
-	}	else if event_cards[index] < 3 {	// Professional
-			events[1, 2]++	// Increments the professional event counter
-			m_skills += 0.5	// Increases skills gain
-			types[1, 0] -= 1000	// - Money
-			types[1, 1] += 100	// + Popularity
-			types[1, 2] += 1000	// + Skills
-	}	else if event_cards[index] < 4 {	// Pop-up ads
-			events[1, 3]++	// Increments the ads event counter
-			m_cash += 0.5	// Increases money gain
-			types[1, 1] = floor(types[1, 1] * 0.75)	// - Popularity
-	}	else if event_cards[index] < 5 {
-			events[1, 4]++ // Increments the trend machine event counter
-			types[1, 0] = floor(types[1, 0] * 1.1)	// + Money
-			types[1, 1] = floor(types[1, 1] * 0.8)	// - Popularity
-			
-	}
-}
-	event_round = floor(random_range(5, 11))
 	cards_chosen++
 	shuffle()
 }
@@ -154,6 +96,12 @@ function shuffle() {
 	for (var i = 0; i < 4; i++) {
 		_new = choose(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19)
 		current_cards[i] = all_cards[_new]
+	}
+	if cards_chosen % 5 == 0 and cards_chosen != 0{
+		_new = choose(0, 1, 2, 3, 4)
+		current_event[0] = all_events[_new]
+		o_no.visible = true
+		o_yes.visible = true
 	}
 }
 
