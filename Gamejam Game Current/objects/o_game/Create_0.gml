@@ -49,6 +49,16 @@ for (var i = 0; i < 20; i++) {
 	}
 }
 
+for (var i = 0; i < 5; i++)
+{
+	var _event_card = instance_create_layer(0, 0, "instances", o_event_cards);
+	all_events[i] = _event_card;
+	
+	switch i
+	{
+		case 0:
+			_event_card.set_values("Data Ransom", value_change(-10, 0, 0, 0),)
+
 
 for (var i = 0; i < 20; i++) {
     if (all_cards[i] != noone) {
