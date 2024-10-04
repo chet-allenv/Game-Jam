@@ -14,8 +14,10 @@ draw_set_halign(fa_center)
 
 // Loops over the cards array to draw each card
 for (var i = 0; i < 4; i++) {
+	if index == i {
+		draw_sprite_ext(current_cards[i]._sprite, 0, (room_width * 0.125 + (i * _space)) - sprite_get_width(current_cards[i]._sprite) / 2, room_height / 3, 2, 2, 0, c_white, 1)
+	} else {
 		// Draws the other cards
-		draw_sprite(current_cards[i]._sprite, 0, room_width * _space2 + (i * _space), room_height / 2)
+		draw_sprite(current_cards[i]._sprite, 0, room_width * 0.125 + (i * _space), room_height / 2)
 	}
-	
-		// ADD a scaled card that the player is hovering over
+}

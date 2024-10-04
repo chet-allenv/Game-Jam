@@ -1,6 +1,6 @@
 {
   "$GMProject":"",
-  "%Name":"BLANK GAME",
+  "%Name":"Gamejam Game",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -34,7 +34,7 @@
   "MetaData":{
     "IDEVersion":"2024.8.1.171",
   },
-  "name":"BLANK GAME",
+  "name":"Gamejam Game",
   "resources":[
     {"id":{"name":"fnt_game","path":"fonts/fnt_game/fnt_game.yy",},},
     {"id":{"name":"fnt_menu","path":"fonts/fnt_menu/fnt_menu.yy",},},
@@ -46,10 +46,12 @@
     {"id":{"name":"o_example_child_card","path":"objects/o_example_child_card/o_example_child_card.yy",},},
     {"id":{"name":"o_exit_button","path":"objects/o_exit_button/o_exit_button.yy",},},
     {"id":{"name":"o_game_over","path":"objects/o_game_over/o_game_over.yy",},},
+    {"id":{"name":"o_game","path":"objects/o_game/o_game.yy",},},
     {"id":{"name":"o_generic_stat_label","path":"objects/o_generic_stat_label/o_generic_stat_label.yy",},},
     {"id":{"name":"o_investor_stat_label","path":"objects/o_investor_stat_label/o_investor_stat_label.yy",},},
     {"id":{"name":"o_menu","path":"objects/o_menu/o_menu.yy",},},
     {"id":{"name":"o_money_stat_label","path":"objects/o_money_stat_label/o_money_stat_label.yy",},},
+    {"id":{"name":"o_normal_cards","path":"objects/o_normal_cards/o_normal_cards.yy",},},
     {"id":{"name":"o_public_stat_label","path":"objects/o_public_stat_label/o_public_stat_label.yy",},},
     {"id":{"name":"o_start_button","path":"objects/o_start_button/o_start_button.yy",},},
     {"id":{"name":"r_game_over","path":"rooms/r_game_over/r_game_over.yy",},},

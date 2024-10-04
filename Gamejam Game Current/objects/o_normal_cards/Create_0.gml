@@ -1,1 +1,2 @@
-// Actual cards (randomized in "step")
+// Inherit the parent event
+event_inherited();

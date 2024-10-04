@@ -28,15 +28,16 @@ if _select
 
 
 // Losing, the global variable carries the lose condition to the next room (game_over)
-if types[1, 0] < 0 { // Out of cash
+if global.money < 0 { // Out of cash
 	global.loss = "Cash"
 	room_goto_next()
-}	else if types[1, 1] < 0 {
-	global.loss = "Popularity"
+}	else if global.employee < 0 {
+	global.loss = "Employee"
 	room_goto_next()
-}	else if types[1, 2] < 0 {
-	global.loss = "Skills"
+}	else if global.investor < 0 {
+	global.loss = "Investor"
+	room_goto_next()
+} else if global.public < 0 {
+	global.loss = "Public"
 	room_goto_next()
 }
-
-

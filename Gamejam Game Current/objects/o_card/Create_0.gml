@@ -1,19 +1,19 @@
 // All basic card values
 
 // Name
-var _name = "Undefined"
+_name = "Undefined"
 
 // How the card affects each stat
-var _money_change = 0
-var _employee_change = 0
-var _investor_change = 0
-var _public_change = 0
+_money_change = 0
+_employee_change = 0
+_investor_change = 0
+_public_change = 0
 
 // Sprite
-var _sprite = spr_old_bg
+_sprite = Sprite2
 
 // Description
-var _description = "Missing Description"
+_description = "Missing Description"
 
 function set_values(_name, _money_change, _employee_change, _investor_change, _public_change, _sprite, _description) {
 	self._name = _name

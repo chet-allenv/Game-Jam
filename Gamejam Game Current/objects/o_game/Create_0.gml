@@ -15,31 +15,42 @@ current_cards = [0, 0, 0, 0]
 
 // Instantiation of cards (and putting them in an array)
 for (var i = 0; i < 20; i++) {
-	var _card = instance_create_layer(0, 0, 0, o_normal_cards)
+	var _card = instance_create_layer(0, 0, "instances", o_normal_cards)
 	all_cards[i] = _card
+	
+	// Setting the values:
+	switch(i) {
+		case 0: _card.set_values("Sponsoring", -5, 0, 5, 5, spr_luck, ""); break;
+        case 1: _card.set_values("Employee Raise", 5, 5, -5, 0, spr_raise, ""); break;
+        case 2: _card.set_values("Employee Party", -5, 5, 0, 0, spr_luck, ""); break;
+        case 3: _card.set_values("Copyright Claim", 5, 0, 5, -5, spr_copyright, ""); break;
+        case 4: _card.set_values("Acquisition", 5, 0, 5, -5, spr_luck, ""); break;
+        case 5: _card.set_values("Charity Donation", 5, 0, -5, 5, spr_luck, ""); break;
+        case 6: _card.set_values("Charity Work", 5, -5, 0, 5, spr_luck, ""); break;
+        case 7: _card.set_values("Trending Medicine", 5, -5, 5, 0, spr_trend, ""); break;
+        case 8: _card.set_values("Tax Evasion", 10, -5, 0, -5, spr_luck, ""); break;
+        case 9: _card.set_values("Cost Cutting", 5, -5, 5, 0, spr_luck, ""); break;
+        case 10: _card.set_values("Pop Up Ads", 5, 0, 5, -5, spr_ads, ""); break;
+        case 11: _card.set_values("Professional Hire", 0, 0, 0, 0, spr_professional, ""); break;
+        case 12: _card.set_values("Well Stocked", 0, 0, 0, 0, spr_stocked, ""); break;
+        case 13: _card.set_values("\"Personal\" Expenses", 10, -5, -5, 0, spr_luck, ""); break;
+        case 14: _card.set_values("Outsourcing", 5, -5, 10, -5, spr_luck, ""); break;
+        case 15: _card.set_values("Environmental Initiative", 5, 0, -5, 5, spr_luck, ""); break;
+        case 16: _card.set_values("International Expansion", 5, -5, 5, 0, spr_luck, ""); break;
+        case 17: _card.set_values("Privacy Policy Update", 10, -5, 0, -5, spr_luck, ""); break;
+        case 18: _card.set_values("Remote Work Policy", 5, 5, -5, 0, spr_luck, ""); break;
+        case 19: _card.set_values("Subscription Service", 5, 0, 5, -5, spr_luck, ""); break;
+	}
 }
 
-if (all_cards[10] != noone) {
-	all_cards[0].set_values("Sponsoring", 0, 0, 5, 5, spr_luck, "")
-	all_cards[1].set_values("Employee Raise", 0, 5, -5, 0, spr_raise, "")
-	all_cards[2].set_values("Employee Party", 0, 5, 0, 0, spr_luck, "")
-	all_cards[3].set_values("Copyright Claim", 0, 0, 5, -5, spr_copyright, "")
-	all_cards[4].set_values("Acquisition", 0, 0, 5, -5, spr_luck, "")
-	all_cards[5].set_values("Charity Donation", 0, 0, -5, 5, spr_luck, "")
-	all_cards[6].set_values("Charity Work", 0, -5, 0, 5, spr_luck, "")
-	all_cards[7].set_values("Trending Medicine", 0, -5, 5, 0, spr_trend, "")
-	all_cards[8].set_values("Tax Evasion", 0, -5, 0, -5, spr_luck, "")
-	all_cards[9].set_values("Cost Cutting", 0, -5, 5, 0, spr_luck, "")
-	all_cards[10].set_values("Pop Up Ads", 0, 0, 5, -5, spr_ads, "")
-	all_cards[11].set_values("Professional Hire", 0, 0, 0, 0, spr_professional, "")
-	all_cards[12].set_values("Well Stocked", 0, 0, 0, 0, spr_stocked, "")
-	all_cards[13].set_values("\"Personal\" Expenses", 0, -5, -5, 0, spr_luck, "")
-	all_cards[14].set_values("Outsourcing", 0, -5, 10, -5, spr_luck, "")
-	all_cards[15].set_values("Environmental Initiative", 0, 0, -5, 5, spr_luck, "")
-	all_cards[16].set_values("International Expansion", 0, -5, 5, 0, spr_luck, "")
-	all_cards[17].set_values("Privacy Policy Update", 0, -5, 0, -5, spr_luck, "")
-	all_cards[18].set_values("Remote Work Policy", 0, 5, -5, 0, spr_luck, "")
-	all_cards[19].set_values("Subscription Service", 0, 0, 5, -5, spr_luck, "")
+
+for (var i = 0; i < 20; i++) {
+    if (all_cards[i] != noone) {
+        // Print the default values (you might want to adjust this based on your initial values)
+        show_debug_message("Card " + string(i) + " - ID: " + string(all_cards[i]) + ", Name: " + all_cards[i]._name);
+    } else {
+        show_debug_message("Card " + string(i) + " is no longer valid.");
+    }
 }
 
 // Variables affecting stat calculations:
@@ -59,7 +70,6 @@ function select_card()
 			global.public += current_cards[i]._public_change
 		}
 	}
-	global.money -= 10		// Employee pay each round, not during event rounds
 	cards_chosen++
 	shuffle()
 }
@@ -117,8 +127,8 @@ function select_event()
 // Basic logic for randomizing the cards that appear
 function shuffle() {
 	for (var i = 0; i < 4; i++) {
-		var _temp = array_choose(all_cards)
-		current_cards[i] = _temp
+		_new = choose(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,13, 14, 15, 16, 17, 18, 19)
+		current_cards[i] = all_cards[_new]
 	}
 }
 
