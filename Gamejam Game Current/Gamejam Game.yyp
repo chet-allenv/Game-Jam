@@ -1,6 +1,6 @@
 {
   "$GMProject":"",
-  "%Name":"Gamejam Game",
+  "%Name":"BLANK GAME",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -34,7 +34,7 @@
   "MetaData":{
     "IDEVersion":"2024.8.1.171",
   },
-  "name":"Gamejam Game",
+  "name":"BLANK GAME",
   "resources":[
     {"id":{"name":"fnt_game","path":"fonts/fnt_game/fnt_game.yy",},},
     {"id":{"name":"fnt_menu","path":"fonts/fnt_menu/fnt_menu.yy",},},

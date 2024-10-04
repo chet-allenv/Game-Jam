@@ -10,7 +10,6 @@
     {"name":"o_example_child_card","order":3,"path":"objects/o_example_child_card/o_example_child_card.yy",},
     {"name":"o_exit_button","order":7,"path":"objects/o_exit_button/o_exit_button.yy",},
     {"name":"o_game_over","order":4,"path":"objects/o_game_over/o_game_over.yy",},
-    {"name":"o_game","order":14,"path":"objects/o_game/o_game.yy",},
     {"name":"o_generic_stat_label","order":8,"path":"objects/o_generic_stat_label/o_generic_stat_label.yy",},
     {"name":"o_investor_stat_label","order":11,"path":"objects/o_investor_stat_label/o_investor_stat_label.yy",},
     {"name":"o_money_stat_label","order":12,"path":"objects/o_money_stat_label/o_money_stat_label.yy",},
