@@ -45,7 +45,11 @@
     {"id":{"name":"o_card","path":"objects/o_card/o_card.yy",},},
     {"id":{"name":"o_employee_stat_label","path":"objects/o_employee_stat_label/o_employee_stat_label.yy",},},
 <<<<<<< HEAD
+<<<<<<< HEAD
     {"id":{"name":"o_end","path":"objects/o_end/o_end.yy",},},
+=======
+    {"id":{"name":"o_event_cards","path":"objects/o_event_cards/o_event_cards.yy",},},
+>>>>>>> 65590234d2d5694bb07580789395009c8823ccb7
 =======
     {"id":{"name":"o_event_cards","path":"objects/o_event_cards/o_event_cards.yy",},},
 >>>>>>> 65590234d2d5694bb07580789395009c8823ccb7

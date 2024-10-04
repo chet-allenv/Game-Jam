@@ -9,7 +9,11 @@
     {"name":"o_card","order":1,"path":"objects/o_card/o_card.yy",},
     {"name":"o_employee_stat_label","order":9,"path":"objects/o_employee_stat_label/o_employee_stat_label.yy",},
 <<<<<<< HEAD
+<<<<<<< HEAD
     {"name":"o_end","order":15,"path":"objects/o_end/o_end.yy",},
+=======
+    {"name":"o_event_cards","order":15,"path":"objects/o_event_cards/o_event_cards.yy",},
+>>>>>>> 65590234d2d5694bb07580789395009c8823ccb7
 =======
     {"name":"o_event_cards","order":15,"path":"objects/o_event_cards/o_event_cards.yy",},
 >>>>>>> 65590234d2d5694bb07580789395009c8823ccb7
