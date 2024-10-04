@@ -85,7 +85,7 @@ m_skills = 1 // Multiplier affecting how much skills is gained
 // This method is to be run when the card is selected.
 function select_card()
 {
-	Script1()
+	
 	// Uses luck to randomly have beneficial effects
 	var _luck = floor(random_range(0, types[1, 3]))
 	// This is to be overridden...

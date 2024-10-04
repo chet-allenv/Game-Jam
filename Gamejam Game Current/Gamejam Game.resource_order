@@ -1,11 +1,17 @@
 {
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
+    {"name":"fnt_game","order":2,"path":"fonts/fnt_game/fnt_game.yy",},
     {"name":"fnt_text","order":1,"path":"fonts/fnt_text/fnt_text.yy",},
+    {"name":"o_button","order":5,"path":"objects/o_button/o_button.yy",},
     {"name":"o_card","order":1,"path":"objects/o_card/o_card.yy",},
     {"name":"o_example_child_card","order":3,"path":"objects/o_example_child_card/o_example_child_card.yy",},
+    {"name":"o_exit_button","order":7,"path":"objects/o_exit_button/o_exit_button.yy",},
     {"name":"o_game_over","order":4,"path":"objects/o_game_over/o_game_over.yy",},
+    {"name":"o_start_button","order":6,"path":"objects/o_start_button/o_start_button.yy",},
     {"name":"r_game_over","order":1,"path":"rooms/r_game_over/r_game_over.yy",},
+    {"name":"GlobalVariables","order":1,"path":"scripts/GlobalVariables/GlobalVariables.yy",},
+    {"name":"button","order":15,"path":"sprites/button/button.yy",},
     {"name":"spr_ads","order":12,"path":"sprites/spr_ads/spr_ads.yy",},
     {"name":"spr_charity","order":10,"path":"sprites/spr_charity/spr_charity.yy",},
     {"name":"spr_copyright","order":8,"path":"sprites/spr_copyright/spr_copyright.yy",},
@@ -20,5 +26,6 @@
     {"name":"spr_stocked","order":9,"path":"sprites/spr_stocked/spr_stocked.yy",},
     {"name":"spr_trend","order":13,"path":"sprites/spr_trend/spr_trend.yy",},
     {"name":"Sprite2","order":2,"path":"sprites/Sprite2/Sprite2.yy",},
+    {"name":"title_screen","order":14,"path":"sprites/title_screen/title_screen.yy",},
   ],
 }
