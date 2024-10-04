@@ -3,6 +3,8 @@
   "ResourceOrderSettings":[
     {"name":"o_no","order":2,"path":"objects/o_no/o_no.yy",},
     {"name":"o_yes","order":1,"path":"objects/o_yes/o_yes.yy",},
+    {"name":"cost_cutting","order":1,"path":"sprites/cost_cutting/cost_cutting.yy",},
     {"name":"Sprite42","order":1,"path":"sprites/Sprite42/Sprite42.yy",},
+    {"name":"subscriptions","order":2,"path":"sprites/subscriptions/subscriptions.yy",},
   ],
 }
