@@ -19,13 +19,16 @@ var _text
 draw_set_font(fnt_text)
 if global.loss == "Cash" {
 	draw_set_color(c_yellow)
-	_text = "You ran out of cash!\nManage funds better next time..."
-}	else if global.loss == "Popularity" {
+	_text = "You ran out of cash!\nMaybe the next CEO will manage funds better next time..."
+}	else if global.loss == "Employees" {
 	draw_set_color(c_red)
-	_text = "The public has turned against you!\nWork on your popularity more next time..."
-}	else if global.loss == "Skills" {
+	_text = "Your employees all quit!\nYour company is nothing without employees.\nMaybe the next CEO will manage them better next time..."
+}	else if global.loss == "Investors" {
 	draw_set_color(c_purple)
-	_text = "You ran out of skilled laborers!\nYour company is nothing without employees.\nManage them better next time..."
+	_text = "You ran out of investors!\nYour company needs its investors.\nMaybe the next CEO will manage them better next time..."
+}	else if global.loss == "Public" {
+	draw_set_color(c_green)
+	_text = "The public has turned against you!\nMaybe the next CEO will be more popular..."
 }
 
 draw_text(room_width / 2, room_height * 0.2, _text)

@@ -38,10 +38,10 @@ if global.money < 0 { // Out of cash
 	global.loss = "Cash"
 	room_goto_next()
 }	else if global.employee < 0 {
-	global.loss = "Employee"
+	global.loss = "Employees"
 	room_goto_next()
 }	else if global.investor < 0 {
-	global.loss = "Investor"
+	global.loss = "Investors"
 	room_goto_next()
 } else if global.public < 0 {
 	global.loss = "Public"

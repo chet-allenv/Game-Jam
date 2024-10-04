@@ -19,6 +19,7 @@
     {"name":"o_start_button","order":6,"path":"objects/o_start_button/o_start_button.yy",},
     {"name":"r_game_over","order":1,"path":"rooms/r_game_over/r_game_over.yy",},
     {"name":"r_test_game","order":2,"path":"rooms/r_test_game/r_test_game.yy",},
+    {"name":"r_tutorial","order":3,"path":"rooms/r_tutorial/r_tutorial.yy",},
     {"name":"GlobalVariables","order":1,"path":"scripts/GlobalVariables/GlobalVariables.yy",},
     {"name":"aquisition","order":39,"path":"sprites/aquisition/aquisition.yy",},
     {"name":"button","order":15,"path":"sprites/button/button.yy",},
