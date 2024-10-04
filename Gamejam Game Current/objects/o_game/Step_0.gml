@@ -1,23 +1,29 @@
-draw_set_font(fnt_menu)
 
-// Keyboard inputs collected
-var _left = keyboard_check_pressed(vk_left)
-var _right = keyboard_check_pressed(vk_right)
-var _select = keyboard_check_pressed(vk_enter) or keyboard_check_pressed(vk_space)
 
-var _move = _right - _left
 
-// Changes the index (indicating which card you are hovering over)
-if _move != 0 {
-	index += _move
-	if cards_chosen % event_round != 0 or cards_chosen == 0 {	// Normal cards
-		if index == -1 index = 3		// Loops to bottom
-		else if index == 4 index = 0	// Loops to start
-	} else {										// Event cards
-		if index == -1 index = 2		// Loops to bottom
-		else if index == 3 index = 0	// Loops to start
+var _select = false;
+
+if rectangle1.is_mouse_within_rectangle() { _index_of_hover_card = 0; hovering = true; }
+else if rectangle2.is_mouse_within_rectangle() { _index_of_hover_card = 1; hovering = true; }
+else if rectangle3.is_mouse_within_rectangle() { _index_of_hover_card = 2; hovering = true; }
+else if rectangle4.is_mouse_within_rectangle() { _index_of_hover_card = 3; hovering = true; }
+else { _index_of_hover_card = -1; hovering = false; }
+
+if (hovering && mouse_check_button_pressed(mb_left)) 
+{
+	clicked = true;
+} 
+
+if (mouse_check_button_released(mb_left)) 
+{
+	clicked = false;
+
+	if (hovering) 
+	{
+		_select = true;
 	}
-}
+	
+} 
 
 
 // Handles selecting a card

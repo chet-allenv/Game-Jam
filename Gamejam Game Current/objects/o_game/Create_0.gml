@@ -13,6 +13,12 @@ event_round = 5
 // Cards
 current_cards = [0, 0, 0, 0]
 
+hovering = false;
+clicked = false;
+_index_of_hover_card = -1;
+
+_space = 300
+
 // Instantiation of cards (and putting them in an array)
 for (var i = 0; i < 20; i++) {
 	var _card = instance_create_layer(0, 0, "instances", o_normal_cards)
@@ -20,26 +26,26 @@ for (var i = 0; i < 20; i++) {
 	
 	// Setting the values:
 	switch(i) {
-		case 0: _card.set_values("Sponsoring", -5, 0, 5, 5, spr_luck, ""); break;
-        case 1: _card.set_values("Employee Raise", 5, 5, -5, 0, spr_raise, ""); break;
-        case 2: _card.set_values("Employee Party", -5, 5, 0, 0, spr_luck, ""); break;
-        case 3: _card.set_values("Copyright Claim", 5, 0, 5, -5, spr_copyright, ""); break;
-        case 4: _card.set_values("Acquisition", 5, 0, 5, -5, spr_luck, ""); break;
-        case 5: _card.set_values("Charity Donation", 5, 0, -5, 5, spr_luck, ""); break;
-        case 6: _card.set_values("Charity Work", 5, -5, 0, 5, spr_luck, ""); break;
-        case 7: _card.set_values("Trending Medicine", 5, -5, 5, 0, spr_trend, ""); break;
-        case 8: _card.set_values("Tax Evasion", 10, -5, 0, -5, spr_luck, ""); break;
-        case 9: _card.set_values("Cost Cutting", 5, -5, 5, 0, spr_luck, ""); break;
-        case 10: _card.set_values("Pop Up Ads", 5, 0, 5, -5, spr_ads, ""); break;
-        case 11: _card.set_values("Professional Hire", 0, 0, 0, 0, spr_professional, ""); break;
-        case 12: _card.set_values("Well Stocked", 0, 0, 0, 0, spr_stocked, ""); break;
-        case 13: _card.set_values("\"Personal\" Expenses", 10, -5, -5, 0, spr_luck, ""); break;
-        case 14: _card.set_values("Outsourcing", 5, -5, 10, -5, spr_luck, ""); break;
-        case 15: _card.set_values("Environmental Initiative", 5, 0, -5, 5, spr_luck, ""); break;
-        case 16: _card.set_values("International Expansion", 5, -5, 5, 0, spr_luck, ""); break;
-        case 17: _card.set_values("Privacy Policy Update", 10, -5, 0, -5, spr_luck, ""); break;
-        case 18: _card.set_values("Remote Work Policy", 5, 5, -5, 0, spr_luck, ""); break;
-        case 19: _card.set_values("Subscription Service", 5, 0, 5, -5, spr_luck, ""); break;
+		case 0: _card.set_values("Sponsoring", -5, 0, 5, 5, sponsors, "Your company is considering sponsoring\ncreators on a popular social media\nplatform. It will cost some funding\nfrom you upfront, but you could potentially\nreach a new audience."); break;
+        case 1: _card.set_values("Employee Raise", 5, 5, -5, 0, raise, "A group of employees have banded together\nto ask for a pay raise from all of\ntheir hard work. Giving them one\nwould make them quite happy, but\nmight not go over well with your investors."); break;
+        case 2: _card.set_values("Employee Party", -5, 5, 0, 0, party, "Your employees are asking for an office\nparty to celebrate the success of your most\nrecent medicine. This is a good\nopportunity to raise morale,\nbut youll have to pay out of pocket."); break;
+        case 3: _card.set_values("Copyright Claim", 5, 0, 5, -5, copyright, "Youve discovered a popular online video\nthat uses unlicensed footage of one\nof your products! People may get angry\nif you press charges, but youll make a\ngood chunk of money doing so."); break;
+        case 4: _card.set_values("Acquisition", 5, 0, 5, -5, aquisition, "You have an opportunity to absorb a smaller\npharmacy and merge all of your assets\nto expand your company. Investors\nwill be overjoyed to hear this, but the\npublic may see this as monopolization."); break;
+        case 5: _card.set_values("Charity Donation", 5, 0, -5, 5, charity, "The monthly Charity For Children event\nis happening tomorrow. Donating would net\nyou some goodwill with the public,\nbut may agitate some of your investors."); break;
+        case 6: _card.set_values("Charity Work", 5, -5, 0, 5, charity_work, "Your company is considering hosting a\nmandatory community service event to build\nhouses for the homeless. This would\ndefinitely increase your standing with\nthe public, but might annoy the employees\nyou are forcing to work there."); break;
+        case 7: _card.set_values("Trending Medicine", 5, -5, 5, 0, trend, "A new type of medicine that rapidly\ntreats pneumonia has been developed.\nInvesting in it would benefit the growth of\nyour company, but would add another thing\nfor your employees to serve to customers."); break;
+        case 8: _card.set_values("Tax Evasion", 10, -5, 0, -5, evasion, "One of your lawyers has found a\nloophole that would allow the company to\nkeep every single penny that would normally\ngo to paying taxes! This extra money\ncould go directly into your wallet,\nbut the public and your employees would\njudge you harshly for doing so."); break;
+        case 9: _card.set_values("Cost Cutting", 5, -5, 5, 0, null_texture, "The company is considering cutting\nback on operating expenses in your\nlocations across the board. Your employees\nmay not like having some of their complementary\nluxuries taken away, but that money\ncan be used for other purposes."); break;
+        case 10: _card.set_values("Pop Up Ads", 5, 0, 5, -5, pop_up, "Your company is thinking about investing\nin pop-up advertisements on websites\nincrease revenue from clicks. This may\nattract new customers to your pharmac and\nincrease revenue, but will frustrate anyone who\nisnt interested in your business."); break;
+        case 11: _card.set_values("Professional Hire", 0, 0, 0, 0, professional, "12"); break;
+        case 12: _card.set_values("Well Stocked", 0, 0, 0, 0, stocked, "13"); break;
+        case 13: _card.set_values("\"Personal\" Expenses", 10, -5, -5, 0, expenses, "14"); break;
+        case 14: _card.set_values("Outsourcing", 5, -5, 10, -5, outsourced, "15"); break;
+        case 15: _card.set_values("Environmental Initiative", 5, 0, -5, 5, environment, "16"); break;
+        case 16: _card.set_values("International Expansion", 5, -5, 5, 0, expansion, "17"); break;
+        case 17: _card.set_values("Privacy Policy Update", 10, -5, 0, -5, private_policy, "18"); break;
+        case 18: _card.set_values("Remote Work Policy", 5, 5, -5, 0, remote_work, "19"); break;
+        case 19: _card.set_values("Subscription Service", 5, 0, 5, -5, null_texture, "20"); break;
 	}
 }
 
@@ -127,10 +133,34 @@ function select_event()
 // Basic logic for randomizing the cards that appear
 function shuffle() {
 	for (var i = 0; i < 4; i++) {
-		_new = choose(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,13, 14, 15, 16, 17, 18, 19)
+		_new = choose(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19)
 		current_cards[i] = all_cards[_new]
 	}
 }
+
+function is_mouse_over_card(_card_index)
+{
+	return collision_point(mouse_x, mouse_y, current_cards[_card_index], false, true);
+}
+
+function rectangle_struct(_x1, _x2)
+{
+	return {
+		X1: _x1,
+		X2: _x2,
+		
+		is_mouse_within_rectangle: function()
+		{
+			return point_in_rectangle(mouse_x, mouse_y, X1, 230, X2, 484);
+		}
+	}
+}
+
+rectangle1 = rectangle_struct(150, 310);
+rectangle2 = rectangle_struct(430, 590);
+rectangle3 = rectangle_struct(712, 880);
+rectangle4 = rectangle_struct(992, 1153);
+
 
 // Shuffles cards immediately
 shuffle()
