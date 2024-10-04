@@ -51,14 +51,23 @@ for (var i = 0; i < 20; i++) {
 
 for (var i = 0; i < 5; i++)
 {
-	var _event_card = instance_create_layer(0, 0, "instances", o_event_cards);
-	all_events[i] = _event_card;
-	
-	switch i
-	{
-		case 0:
-			_event_card.set_values("Data Ransom", value_change(-10, 0, 0, 0),)
+    var _event_card = instance_create_layer(0, 0, "instances", o_event_cards);
+    all_events[i] = _event_card;
 
+    switch i
+    {
+        case 0:
+            _event_card.set_values("Data Ransom", value_change(-10, 0, 0, 0), value_change(0, -5, 0, -5), e_data_ransom, "Your data has been stlolen loL!" ); break;
+        case 1:
+            _event_card.set_values("Drug Smuggling", value_change(10, 0, 10, 0), value_change(0, 0, 0, 0), e_drug_smuggle, "Smuggle drugies yayaya" ); break;
+        case 2:
+            _event_card.set_values("Child Labor", value_change(10, -10, 5, -10), value_change(0, 0, -5, 5), e_child_labor, "emplyoyee kids!?" ); break;
+        case 3:
+            _event_card.set_values("Product Recall", value_change(-5, 0, -5, 0), value_change(0, 0, 0, -10), e_product_recall, "product recall" ); break;
+        case 4:
+            _event_card.set_values("Union", value_change(-5, 10, -5, 0), value_change(5, -10, 0, -5), e_unionize, "UNIIIIOOOOON!!!!" ); break;
+    }
+}
 
 for (var i = 0; i < 20; i++) {
     if (all_cards[i] != noone) {
